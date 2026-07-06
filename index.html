@@ -44,6 +44,8 @@
     html {
       scroll-behavior: smooth;
       font-size: 16px;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     body {
@@ -53,6 +55,7 @@
       color: var(--text-mid);
       background-color: var(--cream);
       overflow-x: hidden;
+      width: 100%;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -359,12 +362,43 @@
       pointer-events: auto;
     }
 
+    .mobile-menu-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      padding: 0.5rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s ease;
+      z-index: 1060;
+    }
+
+    .mobile-menu-close:hover {
+      color: var(--rose);
+    }
+
     .mobile-menu .nav-link {
       font-size: 1.2rem;
       font-family: var(--font-serif);
       font-style: italic;
       text-transform: none;
       letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
     }
 
     /* HERO SECTION */
@@ -377,6 +411,7 @@
       background: radial-gradient(ellipse at 30% 40%, #f9e4e8 0%, #fdf8f5 55%, #f2e9f0 100%);
       padding-top: 100px;
       padding-bottom: 80px;
+      overflow: hidden;
     }
 
     /* Floating botanicals */
@@ -1355,6 +1390,7 @@
 
   <!-- MOBILE OVERLAY MENU -->
   <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Zamknij menu">×</button>
     <a href="#about" class="nav-link mobile-nav-link">O nas</a>
     <a href="#services" class="nav-link mobile-nav-link">Nasza Oferta</a>
     <a href="#flowers-gallery" class="nav-link mobile-nav-link">Galeria Bukietów</a>
@@ -1931,9 +1967,10 @@
         }
       });
 
-      // MOBILE MENU TOGGLE
+       // MOBILE MENU TOGGLE
       const hamburger = document.getElementById('hamburger');
       const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
       const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
       const toggleMobileMenu = () => {
@@ -1943,6 +1980,9 @@
       };
 
       hamburger.addEventListener('click', toggleMobileMenu);
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', toggleMobileMenu);
+      }
 
       mobileNavLinks.forEach(link => {
         link.addEventListener('click', () => {

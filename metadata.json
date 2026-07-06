@@ -1,0 +1,6 @@
+{
+  "name": "Kwiaciarnia Storczyk",
+  "description": "Elegancka kwiaciarnia Marty Oleksy w Łodygowicach. Świeże kwiaty, kompozycje kwiatowe, dekoracje ślubne i ścianki balonowe dla regionu Bielsko-Biała i Żywiec.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kwiaciarnia Storczyk - Marta Oleksy | Łodygowice</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="https://i.ibb.co/ccnnQLGK/289514727-110811388334316-8485033886770969490-n.jpg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* COLOR PALETTE & VARIABLES */
+    :root {
+      --wine: #8b3a52;
+      --wine-dark: #6b2a3e;
+      --rose: #c47a8a;
+      --rose-light: #e8a0b0;
+      --blush: #f9e4e8;
+      --cream: #fdf8f5;
+      --ivory: #faf5f0;
+      --sage: #7a9b7a;
+      --gold: #d4a853;
+      --white: #ffffff;
+      --text-dark: #3a2030;
+      --text-mid: #5a3a4a;
+      --text-muted: #8a6a74;
+      
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Nunito', system-ui, sans-serif;
+    }
+
+    /* CSS RESET */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-mid);
+      background-color: var(--cream);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-serif);
+      color: var(--text-dark);
+      font-weight: 400;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    /* CONTAINER */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 2rem;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      border-radius: 0px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background-color: var(--rose);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--wine);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(139, 58, 82, 0.15);
+    }
+
+    .btn-outline {
+      border-color: var(--rose);
+      color: var(--rose);
+      background-color: transparent;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--blush);
+      border-color: var(--wine);
+      color: var(--wine);
+      transform: translateY(-2px);
+    }
+
+    .btn-white-outline {
+      border-color: var(--rose-light);
+      color: var(--rose-light);
+      background-color: transparent;
+    }
+
+    .btn-white-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: var(--white);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* REVEAL ON SCROLL ANIMATION */
+    .reveal {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* PREFERS REDUCED MOTION */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .botanical-float, .petal-scatter {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
+
+    /* SECTION DECORATORS & DIVIDERS */
+    .section-label {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      text-align: center;
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--wine);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .divider-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 4rem 0;
+    }
+
+    .divider-line {
+      height: 1px;
+      width: 80px;
+      background-color: var(--rose-light);
+    }
+
+    .divider-flower {
+      color: var(--rose);
+      font-size: 0.8rem;
+    }
+
+    /* DETAILED TEXTURES */
+    .dot-grid {
+      background-image: radial-gradient(var(--rose) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.06;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+
+    /* NAVIGATION */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(253, 248, 245, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(196, 122, 138, 0.15);
+      transition: all 0.4s ease;
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 4px 20px rgba(196, 122, 138, 0.08);
+      background-color: rgba(253, 248, 245, 0.96);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 75px;
+      padding: 0 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--wine);
+    }
+
+    .logo-icon {
+      color: var(--rose);
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav-link {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--rose);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--rose);
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .hamburger span {
+      width: 100%;
+      height: 1.5px;
+      background-color: var(--rose);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(8.25px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-8.25px) rotate(-45deg);
+    }
+
+    /* MOBILE MENU OVERLAY */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--cream);
+      z-index: 1050;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-menu .nav-link {
+      font-size: 1.2rem;
+      font-family: var(--font-serif);
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: 0.05em;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: radial-gradient(ellipse at 30% 40%, #f9e4e8 0%, #fdf8f5 55%, #f2e9f0 100%);
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
+
+    /* Floating botanicals */
+    .botanical-float {
+      position: absolute;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-decor-1 {
+      top: 10%;
+      right: -5%;
+      width: clamp(200px, 25vw, 360px);
+      color: var(--sage);
+      animation: float1 9s ease-in-out infinite alternate;
+    }
+
+    .hero-decor-2 {
+      bottom: 5%;
+      left: -5%;
+      width: clamp(150px, 18vw, 240px);
+      color: var(--sage);
+      opacity: 0.8;
+      animation: float2 11s ease-in-out infinite alternate;
+    }
+
+    /* Petal scatter */
+    .petal-scatter {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background-color: rgba(232, 160, 176, 0.4);
+      border-radius: 150% 0 150% 150%;
+      transform: rotate(45deg);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .petal-1 { top: 18%; left: 15%; width: 16px; height: 16px; animation: drift 15s linear infinite; }
+    .petal-2 { top: 40%; left: 82%; width: 12px; height: 12px; animation: drift 18s linear infinite; }
+    .petal-3 { top: 72%; left: 22%; width: 18px; height: 18px; animation: drift 14s linear infinite; }
+    .petal-4 { top: 60%; left: 75%; width: 14px; height: 14px; animation: drift 16s linear infinite; }
+    .petal-5 { top: 25%; left: 62%; width: 10px; height: 10px; animation: drift 20s linear infinite; }
+
+    .hero-content {
+      text-align: center;
+      z-index: 5;
+      max-width: 800px;
+      padding: 0 1.5rem;
+    }
+
+    .hero-top-ornament {
+      margin-bottom: 1.5rem;
+      color: var(--rose);
+      display: inline-block;
+    }
+
+    .hero-rule {
+      height: 1px;
+      width: 80px;
+      background-color: var(--rose-light);
+      margin: 1.5rem auto;
+    }
+
+    .hero-title-mini-1 {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--wine);
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-title-main {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 8vw, 6.2rem);
+      line-height: 0.95;
+      font-weight: 600;
+      color: var(--wine);
+    }
+
+    .hero-title-mini-2 {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(0.95rem, 2vw, 1.2rem);
+      letter-spacing: 0.32em;
+      color: var(--rose);
+      margin-top: 0.5rem;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 1.5rem auto;
+    }
+
+    .hero-sub {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-pill {
+      background-color: var(--blush);
+      border: 1px solid var(--rose-light);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--wine);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    @media (min-width: 576px) {
+      .hero-actions {
+        flex-direction: row;
+      }
+    }
+
+    /* WAVE TRANSITION */
+    .wave-divider {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .wave-divider svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* O NAS SECTION */
+    .about {
+      position: relative;
+      background-color: var(--white);
+      padding: 8rem 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .about-grid {
+        grid-template-columns: 1.1fr 1fr;
+      }
+    }
+
+    /* Frame graphic */
+    .about-frame-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .about-frame {
+      width: 320px;
+      height: 380px;
+      border: 1px solid var(--rose-light);
+      position: relative;
+      padding: 5px;
+      background-color: transparent;
+    }
+
+    .about-frame::after {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+      border: 1px solid var(--rose-light);
+      pointer-events: none;
+    }
+
+    .about-frame-inner {
+      width: 100%;
+      height: 100%;
+      background-color: var(--cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-watermark {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      color: var(--rose);
+      opacity: 0.08;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .about-overlay-box {
+      border: 1px solid rgba(196, 122, 138, 0.25);
+      background-color: var(--white);
+      padding: 1.5rem 1.8rem;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .about-overlay-title {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.8rem;
+      color: var(--wine);
+      margin-top: 0.4rem;
+    }
+
+    .about-overlay-sub {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .gold-badge {
+      position: absolute;
+      bottom: -15px;
+      right: -10px;
+      background-color: var(--blush);
+      border: 1px solid var(--gold);
+      padding: 0.5rem 1rem;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 0.75rem;
+      color: var(--text-dark);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      z-index: 5;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-body {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 2.1;
+      color: var(--text-mid);
+      margin-bottom: 2.5rem;
+    }
+
+    .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .about-feature-item {
+      border-left: 3px solid var(--rose);
+      padding-left: 1.2rem;
+    }
+
+    .about-feature-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--wine);
+      margin-bottom: 0.2rem;
+    }
+
+    .about-feature-desc {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* OFERTA SECTION */
+    .services {
+      position: relative;
+      background-color: var(--cream);
+      padding: 8rem 0;
+      overflow: hidden;
+    }
+
+    .services-bg-watermark {
+      position: absolute;
+      top: 10%;
+      right: -10%;
+      width: 35vw;
+      height: 35vw;
+      color: var(--rose);
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+    }
+
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .service-card {
+      background-color: var(--white);
+      border-radius: 8px;
+      border-top: 2px solid var(--blush);
+      padding: 2.2rem;
+      box-shadow: 0 4px 15px rgba(196, 122, 138, 0.04);
+      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-top-color: var(--rose);
+      box-shadow: 0 12px 30px rgba(196, 122, 138, 0.1);
+    }
+
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--wine);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-desc {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    /* Featured Banner Card (Item 7) */
+    .services-banner {
+      grid-column: 1 / -1;
+      background: radial-gradient(circle at 80% 20%, #c47a8a 0%, #8b3a52 100%);
+      color: var(--white);
+      border-radius: 8px;
+      padding: 3rem;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(139, 58, 82, 0.15);
+    }
+
+    @media (min-width: 768px) {
+      .services-banner {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .services-banner-content {
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .services-banner-tag {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--rose-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .services-banner-title {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .services-banner-desc {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      color: #faf0f2;
+      line-height: 1.8;
+    }
+
+    .services-banner-btn {
+      z-index: 2;
+      background-color: var(--white);
+      color: var(--wine);
+      border: none;
+      flex-shrink: 0;
+    }
+
+    .services-banner-btn:hover {
+      background-color: var(--blush);
+      color: var(--wine-dark);
+      transform: translateY(-2px);
+    }
+
+    .banner-watermark {
+      position: absolute;
+      right: -20px;
+      bottom: -40px;
+      width: 250px;
+      height: 250px;
+      color: rgba(255, 255, 255, 0.05);
+      pointer-events: none;
+    }
+
+    /* GALERIE */
+    .gallery-section {
+      padding: 8rem 0;
+      background-color: var(--white);
+      position: relative;
+    }
+
+    .gallery-section-blush {
+      background-color: var(--blush);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid rgba(196, 122, 138, 0.1);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(139, 58, 82, 0.4);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-icon {
+      color: var(--white);
+      font-size: 1.5rem;
+      transform: scale(0.8);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item:hover .gallery-icon {
+      transform: scale(1);
+    }
+
+    .gallery-item:hover {
+      box-shadow: 0 8px 25px rgba(196, 122, 138, 0.25);
+    }
+
+    /* EXPANDABLE LOGIC */
+    .gallery-extra {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+    }
+
+    .gallery-extra.open {
+      opacity: 1;
+      margin-top: 8px;
+    }
+
+    .gallery-action {
+      display: flex;
+      justify-content: center;
+      margin-top: 3.5rem;
+    }
+
+    /* OPINIE SECTION (DARK ACCENT) */
+    .reviews {
+      background-color: var(--wine);
+      color: var(--white);
+      padding: 8rem 0;
+      position: relative;
+    }
+
+    .reviews-glow {
+      background: radial-gradient(circle at 50% 50%, rgba(232, 160, 176, 0.08), transparent 60%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 992px) {
+      .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .review-card {
+      background-color: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(249, 228, 232, 0.15);
+      border-radius: 10px;
+      padding: 2.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.4s ease;
+    }
+
+    .review-card:hover {
+      background-color: rgba(255, 255, 255, 0.09);
+      border-color: rgba(249, 228, 232, 0.3);
+    }
+
+    .review-stars {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .review-quote-mark {
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-family: var(--font-serif);
+      font-size: 5.5rem;
+      color: rgba(249, 228, 232, 0.08);
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .review-text {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 0.98rem;
+      line-height: 1.9;
+      font-style: italic;
+      color: #faf0f2;
+      margin-bottom: 1.5rem;
+    }
+
+    .review-author {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: rgba(249, 228, 232, 0.6);
+      font-weight: 400;
+    }
+
+    /* KONTAKT SECTION */
+    .contact {
+      background-color: var(--cream);
+      padding: 8rem 0;
+      position: relative;
+    }
+
+    .contact-decor {
+      position: absolute;
+      top: 5%;
+      right: 2%;
+      width: clamp(180px, 20vw, 280px);
+      color: var(--sage);
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+
+    @media (min-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1.1fr 1.3fr;
+      }
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-phone {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--rose);
+      line-height: 1.1;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-phone:hover {
+      color: var(--wine);
+    }
+
+    .contact-rule {
+      height: 1px;
+      width: 100px;
+      background-color: var(--rose-light);
+      margin-bottom: 2rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-detail-label {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-detail-value {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+
+    .contact-details a:hover {
+      color: var(--rose);
+    }
+
+    .contact-fb-btn {
+      align-self: flex-start;
+      gap: 0.8rem;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 380px;
+      border: 1px solid var(--rose-light);
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: var(--white);
+      padding: 5px;
+    }
+
+    .map-iframe-wrapper {
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .map-iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: saturate(0.7) hue-rotate(310deg) brightness(1.05);
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: var(--wine);
+      color: var(--white);
+      padding: 5rem 0 3rem;
+      position: relative;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 2.2rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-sub {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(249, 228, 232, 0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-rule {
+      height: 1px;
+      width: 120px;
+      background-color: rgba(249, 228, 232, 0.15);
+      margin: 1.5rem 0;
+    }
+
+    .footer-details {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: rgba(249, 228, 232, 0.8);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-link {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: var(--rose-light);
+    }
+
+    .footer-link:hover {
+      color: var(--white);
+    }
+
+    .footer-copyright {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      color: rgba(249, 228, 232, 0.35);
+      margin-top: 2rem;
+    }
+
+    /* LIGHTBOX DIALOG */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(58, 32, 48, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-content-wrapper {
+      position: relative;
+      max-width: 90%;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      transform: scale(0.95);
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .lightbox.open .lightbox-img {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 5px;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(139, 58, 82, 0.3);
+      border: none;
+      color: var(--white);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(139, 58, 82, 0.7);
+    }
+
+    .lightbox-prev {
+      left: -60px;
+    }
+
+    .lightbox-next {
+      right: -60px;
+    }
+
+    @media (max-width: 768px) {
+      .lightbox-nav {
+        width: 36px;
+        height: 36px;
+      }
+      .lightbox-prev {
+        left: -15px;
+      }
+      .lightbox-next {
+        right: -15px;
+      }
+      .lightbox-close {
+        top: -40px;
+        right: 10px;
+      }
+    }
+
+    /* KEYFRAME ANIMATIONS */
+    @keyframes float1 {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-16px) rotate(3deg); }
+    }
+
+    @keyframes float2 {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(12px) rotate(-4deg); }
+    }
+
+    @keyframes drift {
+      0% { transform: translateY(0px) rotate(45deg); opacity: 0; }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      100% { transform: translateY(-120px) rotate(135deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        Storczyk
+      </a>
+      
+      <nav class="nav-links">
+        <a href="#about" class="nav-link">O nas</a>
+        <a href="#services" class="nav-link">Oferta</a>
+        <a href="#flowers-gallery" class="nav-link">Bukiety</a>
+        <a href="#balloons-gallery" class="nav-link">Ścianki</a>
+        <a href="#reviews" class="nav-link">Opinie</a>
+        <a href="#contact" class="nav-link">Kontakt</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu mobilne">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE OVERLAY MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="nav-link mobile-nav-link">O nas</a>
+    <a href="#services" class="nav-link mobile-nav-link">Nasza Oferta</a>
+    <a href="#flowers-gallery" class="nav-link mobile-nav-link">Galeria Bukietów</a>
+    <a href="#balloons-gallery" class="nav-link mobile-nav-link">Ścianki Balonowe</a>
+    <a href="#reviews" class="nav-link mobile-nav-link">Opinie Klientów</a>
+    <a href="#contact" class="nav-link mobile-nav-link">Kontakt</a>
+    <div style="margin-top: 1.5rem; color: var(--rose);">❀  ❀  ❀</div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <!-- Decorative SVG 1 (Big branch top right) -->
+      <svg class="botanical-float hero-decor-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+        <path d="M80,10 C70,30 50,45 35,65 C25,78 20,90 20,95" />
+        <path d="M50,45 C55,35 65,30 60,25 C52,22 45,35 50,45Z" fill="currentColor" opacity="0.2" />
+        <path d="M35,65 C30,55 22,50 25,44 C31,40 36,52 35,65Z" fill="currentColor" opacity="0.2" />
+        <path d="M68,25 C75,18 80,18 78,13 C72,10 68,20 68,25Z" fill="currentColor" opacity="0.15" />
+        <circle cx="58" cy="27" r="2.5" fill="#c47a8a" opacity="0.6" />
+        <circle cx="27" cy="46" r="3" fill="#c47a8a" opacity="0.6" />
+      </svg>
+
+      <!-- Decorative SVG 2 (Leaves bottom left) -->
+      <svg class="botanical-float hero-decor-2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+        <path d="M10,90 C30,85 55,70 70,50 C80,38 85,20 90,10" />
+        <path d="M40,77 C50,75 58,68 54,62 C46,58 40,68 40,77Z" fill="currentColor" opacity="0.15" />
+        <path d="M58,61 C68,58 74,50 69,45 C62,42 58,52 58,61Z" fill="currentColor" opacity="0.15" />
+      </svg>
+
+      <!-- Petal drifts -->
+      <div class="petal-scatter petal-1"></div>
+      <div class="petal-scatter petal-2"></div>
+      <div class="petal-scatter petal-3"></div>
+      <div class="petal-scatter petal-4"></div>
+      <div class="petal-scatter petal-5"></div>
+
+      <div class="hero-content reveal active">
+        <div class="hero-rule"></div>
+        <h1 class="hero-title-mini-1">Kwiaciarnia</h1>
+        <div class="hero-title-main">Storczyk</div>
+        <div class="hero-title-mini-2">Marta Oleksy · Łodygowice</div>
+        <div class="hero-rule"></div>
+        <p class="hero-tagline">"Świeże kwiaty, piękne kompozycje i dekoracje na każdą okazję."</p>
+        <p class="hero-sub">Bielsko-Biała · Żywiec · Łodygowice</p>
+        
+        <div class="hero-pills">
+          <span class="hero-pill">🌹 Kwiaty cięte</span>
+          <span class="hero-pill">🌷 Kompozycje</span>
+          <span class="hero-pill">💍 Dekoracje ślubne</span>
+          <span class="hero-pill">🎈 Ścianki balonowe</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="tel:512864022" class="btn btn-primary">Zadzwoń: 512 864 022</a>
+          <a href="mailto:oleksy360@wp.pl" class="btn btn-outline">Napisz do nas</a>
+        </div>
+      </div>
+
+      <!-- Wave transition (Blush -> White) -->
+      <div class="wave-divider">
+        <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,25 C200,50 400,0 600,25 C800,50 1000,0 1200,25 C1320,38 1400,15 1440,25 L1440,50 L0,50 Z" fill="#ffffff"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- O NAS SECTION -->
+    <section class="about" id="about">
+      <div class="dot-grid"></div>
+      <div class="container">
+        <div class="about-grid">
+          
+          <!-- Decorative Frame on the Left -->
+          <div class="about-frame-wrapper reveal">
+            <div class="about-frame">
+              <div class="about-frame-inner">
+                <!-- Large petal watermark -->
+                <svg class="about-watermark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                  <path d="M50,15 C40,35 25,45 25,55 C25,68 35,78 50,78 C65,78 75,68 75,55 C75,45 60,35 50,15Z" opacity="0.8" />
+                </svg>
+
+                <div class="gold-badge">✿ Świeże kwiaty każdego dnia</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- O Nas Text on the Right -->
+          <div class="about-content reveal">
+            <div class="section-label">✿ O NAS</div>
+            <h2 class="section-title">Kwiaty z sercem, od lat.</h2>
+            <div class="about-body">
+              <p>Kwiaciarnia Storczyk w Łodygowicach to miejsce, gdzie kwiaty są nie tylko towarem — to przede wszystkim emocje, pamięć i autentyczna radość. Oferujemy zawsze świeże kwiaty cięte i doniczkowe, unikalne kompozycje na każdą okazję oraz profesjonalną oprawę florystyczną ślubów, wesel i uroczystości pogrzebowych. Z dumą dbamy o uśmiech naszych Klientów z Łodygowic, Bielska-Białej, Żywca oraz okolicznych malowniczych miejscowości.</p>
+            </div>
+
+            <div class="about-features">
+              <div class="about-feature-item">
+                <div class="about-feature-title">🌹 Świeże i piękne</div>
+                <div class="about-feature-desc">Nasze rośliny są starannie selekcjonowane, co gwarantuje ich wyjątkową trwałość.</div>
+              </div>
+              <div class="about-feature-item">
+                <div class="about-feature-title">🤝 Profesjonalne doradztwo</div>
+                <div class="about-feature-desc">Doświadczona florystyka, która z pasją pomoże dobrać idealne kwiaty.</div>
+              </div>
+              <div class="about-feature-item">
+                <div class="about-feature-title">💍 Kompleksowe dekoracje</div>
+                <div class="about-feature-desc">Żywe bukiety na samochód, do kościoła, na salę oraz wyjątkowe aranżacje.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Wave transition (White -> Cream) -->
+      <div class="wave-divider">
+        <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,25 C200,50 400,0 600,25 C800,50 1000,0 1200,25 C1320,38 1400,15 1440,25 L1440,50 L0,50 Z" fill="#fdf8f5"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- OFERTA SECTION -->
+    <section class="services" id="services">
+      <!-- Watermark ✿ -->
+      <svg class="services-bg-watermark" viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <circle cx="12" cy="14" r="8" />
+      </svg>
+      
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">✿ NASZA OFERTA</div>
+          <h2 class="section-title">Czym się zajmujemy</h2>
+          <p class="section-subtitle">Kwiatowe i balonowe piękno tworzone na każdą okazję</p>
+        </div>
+
+        <div class="services-grid reveal">
+          
+          <!-- Card 1 -->
+          <div class="service-card">
+            <div class="service-icon">🌿</div>
+            <h3 class="service-title">Kwiaty cięte i doniczkowe</h3>
+            <p class="service-desc">Bogaty wybór gatunków sprowadzanych od zaufanych dostawców. Zawsze soczyste, zdrowe i gotowe, by ozdobić Twoje wnętrza.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card">
+            <div class="service-icon">💐</div>
+            <h3 class="service-title">Kompozycje kwiatowe</h3>
+            <p class="service-desc">Artystyczne bukiety, modne wianki, kosze oraz kompozycje okolicznościowe tworzone z dbałością o najmniejszy detal.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card">
+            <div class="service-icon">🌸</div>
+            <h3 class="service-title">Kwiaty sztuczne</h3>
+            <p class="service-desc">Wysokiej jakości, niezwykle realistyczne kompozycje z kwiatów sztucznych — idealne jako trwała i elegancka dekoracja.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card">
+            <div class="service-icon">🎁</div>
+            <h3 class="service-title">Upominki okolicznościowe</h3>
+            <p class="service-desc">Dopełnienie każdego upominku. Oferujemy urocze drobiazgi, dekoracyjne pudełka oraz pamiątki na każdą uroczystość.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="service-card">
+            <div class="service-icon">💍</div>
+            <h3 class="service-title">Dekoracje ślubne</h3>
+            <p class="service-desc">Zjawiskowa oprawa florystyczna ślubu. Ozdobimy samochód, salę weselną, kościół oraz stworzymy bukiet Twoich marzeń.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="service-card">
+            <div class="service-icon">🕊️</div>
+            <h3 class="service-title">Florystyka pogrzebowa</h3>
+            <p class="service-desc">Wieńce, wiązanki i dekoracje nagrobne wykonane z najwyższym szacunkiem, taktem i troską o godne pożegnanie bliskiej osoby.</p>
+          </div>
+
+          <!-- Featured Item 7 Banner -->
+          <div class="services-banner">
+            <!-- Balloon ornament watermark -->
+            <svg class="banner-watermark" viewBox="0 0 100 100" fill="currentColor">
+              <circle cx="50" cy="40" r="30" />
+              <path d="M50,70 L48,85 L52,85 Z" />
+            </svg>
+            <div class="services-banner-content">
+              <div class="services-banner-tag">Nowość w ofercie</div>
+              <h3 class="services-banner-title">Efektowne Ścianki Balonowe</h3>
+              <p class="services-banner-desc">Wyjątkowe, kolorowe girlandy i ścianki z balonów, które stanowią zjawiskowe tło do zdjęć na urodzinach, weselach i imprezach firmowych. Sprawdź naszą galerię poniżej!</p>
+            </div>
+            <a href="#balloons-gallery" class="btn services-banner-btn">Zobacz ścianki</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Wave transition (Cream -> White) -->
+      <div class="wave-divider">
+        <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,25 C200,50 400,0 600,25 C800,50 1000,0 1200,25 C1320,38 1400,15 1440,25 L1440,50 L0,50 Z" fill="#ffffff"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- GALERIA BUKIETÓW (FLOWER GALLERY - EXPANDABLE) -->
+    <section class="gallery-section" id="flowers-gallery">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">✿ GALERIA ARTYSTYCZNA</div>
+          <h2 class="section-title">Bukiety, wianki i wiązanki</h2>
+          <p class="section-subtitle">Każda kompozycja to osobna, pełna pasji historia. Kliknij na zdjęcie, aby je powiększyć.</p>
+        </div>
+
+        <!-- Initial Grid (F1 - F8) -->
+        <div class="gallery-grid reveal">
+          <div class="gallery-item" data-index="0" data-gallery="flowers">
+            <img class="gallery-img" src="https://i.ibb.co/bRLJFKdb/652928719-935725475842899-3431390506408853261-n.jpg" alt="Bukiet Storczyk 1" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+          <div class="gallery-item" data-index="1" data-gallery="flowers">
+            <img class="gallery-img" src="https://i.ibb.co/KzQWjgcW/653707981-935725445842902-871123081405869691-n.jpg" alt="Bukiet Storczyk 2" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+          <div class="gallery-item" data-index="2" data-gallery="flowers">
+            <img class="gallery-img" src="https://i.ibb.co/C3wQGqxb/653703382-935725549176225-2326496411797372568-n.jpg" alt="Bukiet Storczyk 3" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+          <div class="gallery-item" data-index="3" data-gallery="flowers">
+            <img class="gallery-img" src="https://i.ibb.co/mVgfpdqK/651793844-935725919176188-5821810856174735797-n.jpg" alt="Bukiet Storczyk 4" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+          <div class="gallery-item" data-index="4" data-gallery="flowers">
+            <img class="gallery-img" src="https://i.ibb.co/V0DShCZD/658822133-940656895349757-2628945388937353027-n.jpg" alt="Bukiet Storczyk 5" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+          <div class="gallery-item" data-index="5" data-gallery="flowers">
+            <img class="gallery-img" src="https://i.ibb.co/7NCvZGCM/658246753-940656925349754-1697575012819088043-n.jpg" alt="Bukiet Storczyk 6" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+          <div class="gallery-item" data-index="6" data-gallery="flowers">
+            <img class="gallery-img" src="https://i.ibb.co/JFCPfTM5/655751721-940656962016417-5797078756294585785-n.jpg" alt="Bukiet Storczyk 7" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+          <div class="gallery-item" data-index="7" data-gallery="flowers">
+            <img class="gallery-img" src="https://i.ibb.co/4nG9jpGs/656752545-940657012016412-4242763882057828038-n.jpg" alt="Bukiet Storczyk 8" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+        </div>
+
+        <!-- Extra Hidden Grid (F9 - F28) -->
+        <div class="gallery-extra" id="flowers-extra">
+          <div class="gallery-grid">
+            <div class="gallery-item" data-index="8" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/pr2JcWYL/670351992-959057480176365-8506182667770669439-n.jpg" alt="Bukiet Storczyk 9" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="9" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/Zz5PFWLg/672061307-959056976843082-2009555233997096420-n.jpg" alt="Bukiet Storczyk 10" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="10" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/pBjKYry5/671181132-959057013509745-6509445538629685295-n.jpg" alt="Bukiet Storczyk 11" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="11" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/SYmCg9/671793439-959057056843074-4714063856188042704-n.jpg" alt="Bukiet Storczyk 12" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="12" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/B2CxVhZb/674218422-959057083509738-5479903662611065453-n.jpg" alt="Bukiet Storczyk 13" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="13" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/JRhNff9r/672653495-959057510176362-717497291529795145-n.jpg" alt="Bukiet Storczyk 14" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="14" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/0pzsMtkL/703316101-988636713885108-2766614810830288361-n.jpg" alt="Bukiet Storczyk 15" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="15" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/S4xrKbPC/703997540-988724497209663-7447099957862481249-n.jpg" alt="Bukiet Storczyk 16" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="16" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/q3T8zJgD/702813023-988724557209657-4101144056172194897-n.jpg" alt="Bukiet Storczyk 17" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="17" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/rGRgrpkb/703812066-988724610542985-3153977744039102900-n.jpg" alt="Bukiet Storczyk 18" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="18" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/RTcyJZKc/702677155-988724657209647-7405884057927891984-n.jpg" alt="Bukiet Storczyk 19" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="19" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/HLKzDwh6/706568364-992210593527720-5364263371512315970-n.jpg" alt="Bukiet Storczyk 20" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="20" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/NXZ663J/706457000-992210636861049-6351868556677141246-n.jpg" alt="Bukiet Storczyk 21" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="21" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/tT4dkWT9/706357040-992210676861045-794011365589399924-n.jpg" alt="Bukiet Storczyk 22" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="22" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/spfQB4M3/706504707-992210726861040-263256438755660210-n.jpg" alt="Bukiet Storczyk 23" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="23" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/SDdVVYT6/706582171-992210770194369-4112045523279986072-n.jpg" alt="Bukiet Storczyk 24" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="24" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/Df14bZ20/706277461-992210823527697-7565673506699522775-n.jpg" alt="Bukiet Storczyk 25" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="25" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/QFkWLchH/705757825-992210863527693-1590738939430702289-n.jpg" alt="Bukiet Storczyk 26" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="26" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/Z1S4pVgc/706517856-992210926861020-3736939247470418035-n.jpg" alt="Bukiet Storczyk 27" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="27" data-gallery="flowers">
+              <img class="gallery-img" src="https://i.ibb.co/kgtSNhsT/709844057-995658883182891-5670960252031680124-n.jpg" alt="Bukiet Storczyk 28" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="gallery-action">
+          <button class="btn btn-outline" id="btn-toggle-flowers" aria-expanded="false" aria-controls="flowers-extra">
+            <span>Rozwiń galerię ✿</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Divider (White -> Blush) -->
+      <div class="divider-container">
+        <div class="divider-line"></div>
+        <span class="divider-flower">✿</span>
+        <div class="divider-line"></div>
+      </div>
+    </section>
+
+    <!-- GALERIA ŚCIANEK BALONOWYCH (BALLOONS GALLERY - EXPANDABLE) -->
+    <section class="gallery-section gallery-section-blush" id="balloons-gallery">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">✿ NOWOCZESNE ARANŻACJE</div>
+          <h2 class="section-title">Kolorowe ścianki balonowe</h2>
+          <p class="section-subtitle">Stylowe, zjawiskowe girlandy i kompozycje na urodziny, wesela oraz eventy.</p>
+        </div>
+
+        <!-- Initial Grid (B1 - B4) -->
+        <div class="gallery-grid reveal">
+          <div class="gallery-item" data-index="0" data-gallery="balloons">
+            <img class="gallery-img" src="https://i.ibb.co/cXF5mjCH/702703477-988636340551812-3687117034670283693-n.jpg" alt="Ścianka Balonowa 1" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+          <div class="gallery-item" data-index="1" data-gallery="balloons">
+            <img class="gallery-img" src="https://i.ibb.co/XfLy2jjg/702028289-988636380551808-7678510359760987045-n.jpg" alt="Ścianka Balonowa 2" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+          <div class="gallery-item" data-index="2" data-gallery="balloons">
+            <img class="gallery-img" src="https://i.ibb.co/4Z46Gkxt/702982002-988636410551805-8824656656942498368-n.jpg" alt="Ścianka Balonowa 3" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+          <div class="gallery-item" data-index="3" data-gallery="balloons">
+            <img class="gallery-img" src="https://i.ibb.co/XTdTYSQ/701850675-988636457218467-4619304105079186129-n.jpg" alt="Ścianka Balonowa 4" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+        </div>
+
+        <!-- Extra Hidden Grid (B5 - B9) -->
+        <div class="gallery-extra" id="balloons-extra">
+          <div class="gallery-grid">
+            <div class="gallery-item" data-index="4" data-gallery="balloons">
+              <img class="gallery-img" src="https://i.ibb.co/j9swnmGr/703565220-988636497218463-3557049083572345121-n.jpg" alt="Ścianka Balonowa 5" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="5" data-gallery="balloons">
+              <img class="gallery-img" src="https://i.ibb.co/5XjWjkkh/701785776-988636557218457-3941206986099933483-n.jpg" alt="Ścianka Balonowa 6" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="6" data-gallery="balloons">
+              <img class="gallery-img" src="https://i.ibb.co/tMCGYxvR/702752280-988636607218452-6747983354090923477-n.jpg" alt="Ścianka Balonowa 7" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="7" data-gallery="balloons">
+              <img class="gallery-img" src="https://i.ibb.co/TqwZ5tG4/702968954-988636643885115-5978399469044069488-n.jpg" alt="Ścianka Balonowa 8" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+            <div class="gallery-item" data-index="8" data-gallery="balloons">
+              <img class="gallery-img" src="https://i.ibb.co/606fHzdY/702516067-988636670551779-8143282606408068502-n.jpg" alt="Ścianka Balonowa 9" loading="lazy">
+              <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="gallery-action">
+          <button class="btn btn-outline" id="btn-toggle-balloons" aria-expanded="false" aria-controls="balloons-extra">
+            <span>Rozwiń galerię ✿</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Wave transition (Blush -> Wine) -->
+      <div class="wave-divider">
+        <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,25 C200,50 400,0 600,25 C800,50 1000,0 1200,25 C1320,38 1400,15 1440,25 L1440,50 L0,50 Z" fill="#8b3a52"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- OPINIE SECTION (DARK ACCENT) -->
+    <section class="reviews" id="reviews">
+      <div class="reviews-glow"></div>
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label" style="color: var(--rose-light);">✿ OPINIE KLIENTÓW</div>
+          <h2 class="section-title" style="color: var(--cream);">Co mówią nasze Klientki</h2>
+          <p class="section-subtitle" style="color: rgba(249, 228, 232, 0.75);">Słowa uznania i radości naszych wyjątkowych gości</p>
+        </div>
+
+        <div class="reviews-grid reveal">
+          
+          <!-- Review 1 -->
+          <div class="review-card">
+            <span class="review-quote-mark">“</span>
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Kwiaciarnia godna polecenia. Zawsze świeże i piękne kwiaty oraz bukiety 🙂"</p>
+            </div>
+            <span class="review-author">— Opinia z Facebooka</span>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card">
+            <span class="review-quote-mark">“</span>
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Polecam piękne i zawsze świeże kwiaty a Pani Lucynka zawsze dobrze doradzi! Polecam od lat tam kupuję kwiaty i zawsze jestem zadowolona."</p>
+            </div>
+            <span class="review-author">— Opinia z Facebooka</span>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <span class="review-quote-mark">“</span>
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Dziękujemy za kolejną współpracę 💞 Samochód dla Pary Młodej został ubrany w przepiękne żywe kwiaty 🌷 Mimo deszczu i niepogody wyglądały bajecznie!"</p>
+            </div>
+            <span class="review-author">— Opinia z Facebooka</span>
+          </div>
+
+        </div>
+
+        <div class="gallery-action reveal" style="margin-top: 4rem;">
+          <a href="https://www.facebook.com/profile.php?id=100082163664070&sk=reviews" target="_blank" rel="noopener noreferrer" class="btn btn-white-outline">Zobacz więcej opinii na Facebooku →</a>
+        </div>
+      </div>
+
+      <!-- Wave transition (Wine -> Cream) -->
+      <div class="wave-divider">
+        <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,25 C200,50 400,0 600,25 C800,50 1000,0 1200,25 C1320,38 1400,15 1440,25 L1440,50 L0,50 Z" fill="#fdf8f5"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- KONTAKT SECTION -->
+    <section class="contact" id="contact">
+      <!-- Botanical SVG (rose branch) top-right -->
+      <svg class="contact-decor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+        <path d="M70,10 C60,25 45,35 30,55 C20,68 15,80 15,85" />
+        <path d="M45,35 C50,25 60,20 55,15 C47,12 40,25 45,35Z" fill="currentColor" opacity="0.4" />
+      </svg>
+
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">✿ KONTAKT</div>
+          <h2 class="section-title">Odwiedź nas lub zadzwoń</h2>
+          <p class="section-subtitle" style="margin-bottom: 4.5rem;">Czekamy na Ciebie z najpiękniejszymi kompozycjami</p>
+        </div>
+
+        <div class="contact-grid reveal">
+          
+          <!-- Contact Details -->
+          <div class="contact-info">
+            <a href="tel:512864022" class="contact-phone">512 864 022</a>
+            <div class="contact-rule"></div>
+            
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <span class="contact-detail-label">Adres kwiaciarni</span>
+                <span class="contact-detail-value">Piłsudskiego 17, Łodygowice 34-325</span>
+              </div>
+              <div class="contact-detail-item">
+                <span class="contact-detail-label">E-mail</span>
+                <span class="contact-detail-value"><a href="mailto:oleksy360@wp.pl">oleksy360@wp.pl</a></span>
+              </div>
+              <div class="contact-detail-item">
+                <span class="contact-detail-label">Obszar działalności</span>
+                <span class="contact-detail-value">Łodygowice · Bielsko-Biała · Żywiec i okolice</span>
+              </div>
+            </div>
+
+            <a href="https://www.facebook.com/profile.php?id=100082163664070" target="_blank" rel="noopener noreferrer" class="btn btn-primary contact-fb-btn">
+              <!-- Inline Facebook Icon -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:middle;margin-right:8px">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              Storczyk na Facebooku
+            </a>
+          </div>
+
+          <!-- Google Maps Iframe wrapper with rose theme tint -->
+          <div class="map-container">
+            <div class="map-iframe-wrapper">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2568.6479633854117!2d19.135606477038166!3d49.71261317146059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471421711df779cf%3A0x868b446c6ea1925b!2zUGnFgnN1ZHNraWVnbyAxNywgMzQtMzI1IMWBb2R5Z293aWNl!5e0!3m2!1spl!2spl!4v1720000000000!5m2!1spl!2spl" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-logo">Storczyk</div>
+      <div class="footer-sub">Kwiaciarnia · Łodygowice</div>
+      
+      <div class="footer-rule"></div>
+      
+      <div class="footer-details">
+        <p>ul. Piłsudskiego 17, 34-325 Łodygowice</p>
+        <p>Telefon: 512 864 022 | E-mail: oleksy360@wp.pl</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://www.facebook.com/profile.php?id=100082163664070" target="_blank" rel="noopener noreferrer" class="footer-link">Śledź nas na Facebooku</a>
+      </div>
+
+      <div class="footer-copyright">
+        © 2026 Kwiaciarnia Storczyk — Marta Oleksy | Łodygowice. Wszelkie prawa zastrzeżone.
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX / PHOTO PREVIEW MODAL -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Podgląd zdjęcia">
+    <div class="lightbox-content-wrapper">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Zamknij podgląd">×</button>
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Poprzednie zdjęcie">‹</button>
+      <img class="lightbox-img" id="lightbox-img" src="" alt="">
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Następne zdjęcie">›</button>
+    </div>
+  </div>
+
+  <!-- VANILLA JAVASCRIPT FOR LOGIC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // NAVBAR SCROLL EFFECT
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // MOBILE MENU TOGGLE
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      const toggleMobileMenu = () => {
+        hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      };
+
+      hamburger.addEventListener('click', toggleMobileMenu);
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mobileMenu.classList.contains('open')) {
+            toggleMobileMenu();
+          }
+        });
+      });
+
+      // REVEAL ON SCROLL INTERSECTION OBSERVER
+      const revealElements = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Unobserve once revealed to keep performance slick
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.05,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(el => observer.observe(el));
+
+      // EXPANDABLE GALLERIES
+      const setupExpandableGallery = (btnId, extraId) => {
+        const btn = document.getElementById(btnId);
+        const extra = document.getElementById(extraId);
+
+        btn.addEventListener('click', () => {
+          const isOpen = extra.classList.contains('open');
+          
+          if (isOpen) {
+            extra.style.maxHeight = '0px';
+            extra.classList.remove('open');
+            btn.querySelector('span').textContent = 'Rozwiń galerię ✿';
+            btn.setAttribute('aria-expanded', 'false');
+            
+            // Scroll back slightly to the section header so the user is not lost
+            const section = document.getElementById(extraId.replace('-extra', '-gallery'));
+            section.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            extra.classList.add('open');
+            extra.style.maxHeight = extra.scrollHeight + 'px';
+            btn.querySelector('span').textContent = 'Zwiń galerię ↑';
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      };
+
+      setupExpandableGallery('btn-toggle-flowers', 'flowers-extra');
+      setupExpandableGallery('btn-toggle-balloons', 'balloons-extra');
+
+      // LIGHTBOX AND GALLERY NAVIGATION DATA
+      const flowerSources = Array.from(document.querySelectorAll('[data-gallery="flowers"] .gallery-img')).map(img => img.src);
+      const balloonSources = Array.from(document.querySelectorAll('[data-gallery="balloons"] .gallery-img')).map(img => img.src);
+
+      let currentGallery = [];
+      let currentIndex = 0;
+
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxClose = document.getElementById('lightbox-close');
+      const lightboxPrev = document.getElementById('lightbox-prev');
+      const lightboxNext = document.getElementById('lightbox-next');
+
+      const openLightbox = (galleryName, index) => {
+        currentGallery = galleryName === 'flowers' ? flowerSources : balloonSources;
+        currentIndex = parseInt(index);
+        
+        lightboxImg.src = currentGallery[currentIndex];
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+          lightboxImg.src = '';
+        }, 300);
+      };
+
+      const navigateLightbox = (direction) => {
+        if (direction === 'next') {
+          currentIndex = (currentIndex + 1) % currentGallery.length;
+        } else {
+          currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+        }
+        
+        // Soft fade effect during slide change
+        lightboxImg.style.opacity = '0';
+        setTimeout(() => {
+          lightboxImg.src = currentGallery[currentIndex];
+          lightboxImg.style.opacity = '1';
+        }, 150);
+      };
+
+      // Event listeners for opening
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const gallery = item.getAttribute('data-gallery');
+          const index = item.getAttribute('data-index');
+          openLightbox(gallery, index);
+        });
+      });
+
+      // Closing triggers
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      // Navigation triggers
+      lightboxPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navigateLightbox('prev');
+      });
+      lightboxNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navigateLightbox('next');
+      });
+
+      // Keyboard support
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') navigateLightbox('next');
+        if (e.key === 'ArrowLeft') navigateLightbox('prev');
+      });
+
+    });
+  </script>
+</body>
+</html>

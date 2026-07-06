@@ -546,16 +546,9 @@
     }
 
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 4.5rem;
+      display: flex;
+      justify-content: center;
       align-items: center;
-    }
-
-    @media (min-width: 992px) {
-      .about-grid {
-        grid-template-columns: 1.1fr 1fr;
-      }
     }
 
     /* Frame graphic */
@@ -655,6 +648,8 @@
     .about-content {
       display: flex;
       flex-direction: column;
+      max-width: 800px;
+      width: 100%;
     }
 
     .about-body {
@@ -1432,20 +1427,6 @@
       <div class="container">
         <div class="about-grid">
           
-          <!-- Decorative Frame on the Left -->
-          <div class="about-frame-wrapper reveal">
-            <div class="about-frame">
-              <div class="about-frame-inner">
-                <!-- Large petal watermark -->
-                <svg class="about-watermark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                  <path d="M50,15 C40,35 25,45 25,55 C25,68 35,78 50,78 C65,78 75,68 75,55 C75,45 60,35 50,15Z" opacity="0.8" />
-                </svg>
-
-                <div class="gold-badge">✿ Świeże kwiaty każdego dnia</div>
-              </div>
-            </div>
-          </div>
-
           <!-- O Nas Text on the Right -->
           <div class="about-content reveal">
             <div class="section-label">✿ O NAS</div>
